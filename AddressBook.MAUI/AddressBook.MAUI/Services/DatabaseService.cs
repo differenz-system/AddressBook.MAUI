@@ -4,8 +4,8 @@ using SQLite;
 
 namespace AddressBook.MAUI.Services
 {
-	public class DatabaseService
-	{
+    public class DatabaseService
+    {
         public DatabaseService()
         {
         }

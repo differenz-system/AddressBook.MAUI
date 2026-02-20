@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage  xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
-                  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                  x:Class="AddressBook.MAUI.Views.Popups.LoadingPopup"
-                  xmlns:Services="clr-namespace:AddressBook.MAUI.Services"
-                  xmlns:animations="clr-namespace:Mopups.Animations;assembly=Mopups"
-                  BackgroundColor="#99000000"
-                  CloseWhenBackgroundIsClicked="False">
+<pages:PopupPage
+    x:Class="AddressBook.MAUI.Views.Popups.LoadingPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Services="clr-namespace:AddressBook.MAUI.Services"
+    xmlns:animations="clr-namespace:Mopups.Animations;assembly=Mopups"
+    xmlns:pages="clr-namespace:Mopups.Pages;assembly=Mopups"
+    BackgroundColor="#99000000"
+    CloseWhenBackgroundIsClicked="False">
     <pages:PopupPage.Resources>
         <ResourceDictionary />
     </pages:PopupPage.Resources>
@@ -17,12 +18,31 @@
         </OnPlatform>
     </pages:PopupPage.HasSystemPadding>
     <pages:PopupPage.Animation>
-        <animations:ScaleAnimation PositionIn="Center" PositionOut="Center" ScaleIn="1.2" ScaleOut="0.8" DurationIn="400" DurationOut="300" EasingIn="SinOut" EasingOut="SinIn" HasBackgroundAnimation="True" />
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
     </pages:PopupPage.Animation>
     <pages:PopupPage.Content>
-        <StackLayout AutomationId="LoadingPopup" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="{x:Static Services:LayoutService.Spacing20}" Padding="{x:Static Services:LayoutService.MarginPadding30}">
-            <ActivityIndicator VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Color="{StaticResource WhiteColor}" IsRunning="true" IsVisible="true">
-            </ActivityIndicator>
+        <StackLayout
+            Padding="{x:Static Services:LayoutService.MarginPadding30}"
+            AutomationId="LoadingPopup"
+            BackgroundColor="Transparent"
+            HorizontalOptions="CenterAndExpand"
+            Spacing="{x:Static Services:LayoutService.Spacing20}"
+            VerticalOptions="CenterAndExpand">
+            <ActivityIndicator
+                HorizontalOptions="CenterAndExpand"
+                IsRunning="true"
+                IsVisible="true"
+                VerticalOptions="CenterAndExpand"
+                Color="{StaticResource WhiteColor}" />
         </StackLayout>
     </pages:PopupPage.Content>
 </pages:PopupPage>

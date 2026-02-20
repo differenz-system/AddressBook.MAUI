@@ -2,10 +2,10 @@
 
 public partial class MyDetailsPage : ContentPage
 {
-	public MyDetailsPage()
-	{
-		InitializeComponent();
-	}
+    public MyDetailsPage()
+    {
+        InitializeComponent();
+    }
 
     protected override async void OnAppearing()
     {

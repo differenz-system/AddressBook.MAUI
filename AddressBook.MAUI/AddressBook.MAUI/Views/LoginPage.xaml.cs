@@ -4,10 +4,10 @@ namespace AddressBook.MAUI.Views;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
-	{
-		InitializeComponent();
-	}
+    public LoginPage()
+    {
+        InitializeComponent();
+    }
 
     protected override async void OnAppearing()
     {

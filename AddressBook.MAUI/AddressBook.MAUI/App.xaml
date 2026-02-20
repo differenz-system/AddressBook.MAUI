@@ -1,25 +1,35 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
-<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AddressBook.MAUI"
-             xmlns:SubViews="clr-namespace:AddressBook.MAUI.Views.SubViews"
-             xmlns:Services="clr-namespace:AddressBook.MAUI.Services"
-             xmlns:customControls="clr-namespace:AddressBook.MAUI.CustomControls"
-             x:Class="AddressBook.MAUI.App">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="AddressBook.MAUI.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Services="clr-namespace:AddressBook.MAUI.Services"
+    xmlns:SubViews="clr-namespace:AddressBook.MAUI.Views.SubViews"
+    xmlns:customControls="clr-namespace:AddressBook.MAUI.CustomControls"
+    xmlns:local="clr-namespace:AddressBook.MAUI">
     <Application.Resources>
-        <!-- Templates-->
+        <!--  Templates  -->
         <ControlTemplate x:Key="HeaderTemplate">
-            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{x:AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource WhiteColor}}" RowSpacing="0" ColumnSpacing="0">
+            <Grid
+                BackgroundColor="{x:AppThemeBinding Dark={StaticResource BlackColor},
+                                                    Light={StaticResource WhiteColor}}"
+                ColumnSpacing="0"
+                HorizontalOptions="FillAndExpand"
+                RowSpacing="0"
+                VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <SubViews:HeaderView Grid.Row="0" BindingContext="{TemplateBinding BindingContext.CurrentHeader}" />
-                <ContentPresenter Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <ContentPresenter
+                    Grid.Row="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand" />
             </Grid>
         </ControlTemplate>
 
-        <!-- Colors -->
+        <!--  Colors  -->
         <Color x:Key="PrimaryColor">#235B5F</Color>
         <Color x:Key="SecondaryColor">#5BDABB</Color>
         <Color x:Key="SmokeWhiteColor">#eeeeee</Color>
@@ -33,7 +43,7 @@
         <x:String x:Key="book-open">&#xf518;</x:String>
         <x:String x:Key="sign-out-alt">&#xf2f5;</x:String>
 
-        <!--Base Style-->
+        <!--  Base Style  -->
 
         <Style TargetType="Label">
             <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor}, Light={StaticResource BlackColor}}" />
@@ -60,8 +70,8 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.1" />
-                        <GradientStop Color="{StaticResource PrimaryColor}" Offset="1.0" />
+                        <GradientStop Offset="0.1" Color="{StaticResource SecondaryColor}" />
+                        <GradientStop Offset="1.0" Color="{StaticResource PrimaryColor}" />
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
@@ -111,7 +121,7 @@
         </Style>
 
 
-        <!--Label Styles-->
+        <!--  Label Styles  -->
 
         <Style x:Key="Size12BlackBoldLabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="{x:Static Services:LayoutService.FontSize12}" />
@@ -167,7 +177,7 @@
             <Setter Property="Padding" Value="0" />
         </Style>
 
-        <!-- Frame Style -->
+        <!--  Frame Style  -->
         <Style x:Key="FacebookLoginFrameStyle" TargetType="Frame">
             <Setter Property="BackgroundColor" Value="{StaticResource DarkBlueColor}" />
             <Setter Property="HasShadow" Value="False" />
@@ -176,4 +186,3 @@
         </Style>
     </Application.Resources>
 </Application>
-
